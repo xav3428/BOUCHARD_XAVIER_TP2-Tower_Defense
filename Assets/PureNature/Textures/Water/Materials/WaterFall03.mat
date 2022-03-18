@@ -103,6 +103,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _099: 0.07
     - _BumpScale: 1
@@ -130,7 +131,7 @@ Material:
     - _FoamDepth: 0
     - _FoamDistance: 0.57
     - _FoamFalloff: 0
-    - _FoamPower: 1
+    - _FoamPower: 0.5
     - _FoamScale: 0.2
     - _FoamSmoothness: 0
     - _FoamSpeed: 0.25
@@ -151,7 +152,7 @@ Material:
     - _NormalTiling: 0.05
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _RefractionPower: 0.88
+    - _RefractionPower: 1.17
     - _SmoothnessPower: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -195,3 +196,4 @@ Material:
     - _WavesScale: {r: 1, g: 1, b: 0, a: 0}
     - _WavesScaleOLD: {r: 1, g: 1, b: 0, a: 0}
     - _WavesScaleXY: {r: 0.1, g: 0.1, b: 0, a: 0}
+  m_BuildTextureStacks: []
