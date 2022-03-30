@@ -31,6 +31,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &558766880039471916
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7293674580133180539}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 9194973925855411080, guid: 015cc955fa820a34fa386051717616a6, type: 3}
 --- !u!1001 &677911473756481631
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -94,6 +108,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6223898686307258459, guid: 015cc955fa820a34fa386051717616a6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 53caef2cb7eb521448b0c4b3a2e8d5ed, type: 2}
     - target: {fileID: 919132149155446097, guid: 015cc955fa820a34fa386051717616a6, type: 3}
       propertyPath: m_Name
       value: BridgePontoon
@@ -110,17 +128,3 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: -1418569527397393372, guid: 015cc955fa820a34fa386051717616a6, type: 3}
   m_PrefabInstance: {fileID: 677911473756481631}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &558766880039471916
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7293674580133180539}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 9194973925855411080, guid: 015cc955fa820a34fa386051717616a6, type: 3}
