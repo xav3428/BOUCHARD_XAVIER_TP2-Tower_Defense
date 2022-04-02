@@ -17,13 +17,14 @@ public class NightShadeNav : Navigation
         var areaMask = new NavMeshHit();
 
         agent.SamplePathPosition(-1, 0.0f, out areaMask);
+        Debug.Log(areaMask.mask);
         if (areaMask.mask == 8)
         {
-            animator.SetBool("InShortcut", true);
+            animator.SetInteger("areamask", 8);
         }
         else
         {
-            animator.SetBool("InShortcut", false);
+            animator.SetInteger("areamask", 1);
         }
 
     }

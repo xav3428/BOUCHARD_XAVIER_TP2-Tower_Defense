@@ -17,13 +17,5 @@ public class Navigation : MonoBehaviour
         animator = GetComponent<Animator>();
 
         agent.SetDestination(destinationPoint);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    
+    }   
 }
