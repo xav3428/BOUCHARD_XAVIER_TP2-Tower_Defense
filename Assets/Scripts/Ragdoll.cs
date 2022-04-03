@@ -22,12 +22,12 @@ public class Ragdoll : MonoBehaviour
         if (die == true)
         {
             die = false;
-            Die();
+            ActivateRagdoll();
             Invoke("DeleteSelf", 3f);
         }
     }
 
-    void Die()
+    void ActivateRagdoll()
     {
         // Disables the animator
         animator.enabled = false;
