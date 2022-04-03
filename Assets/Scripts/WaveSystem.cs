@@ -6,16 +6,17 @@ public class WaveSystem : MonoBehaviour
 {
     int round;
     int numberToSpawn;
+    bool waveQueued = false;
     public GameObject warrok;
     public GameObject nightshade;
     public GameObject skeleton;
+    private System.Random random = new System.Random();
     List<GameObject> listEnemies = new List<GameObject>();
     Vector3 spawnPoint;
 
     // Start is called before the first frame update
     void Start()
     {
-        round = 1;
         numberToSpawn = 0;
         spawnPoint = GameObject.Find("SpawnPoint").transform.position;
     }
@@ -23,44 +24,60 @@ public class WaveSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (listEnemies.Count == 0)
+        if (listEnemies.Count == 0 && waveQueued == false)
         {
-            startNextWave();
+            Invoke("startNextWave", 5f);
+            waveQueued = true;
         }
     }
 
     void startNextWave()
     {
         spawnMonsters();
-        round += 1;
+        
     }
 
     void spawnMonsters()
     {
-        numberToSpawn += 2 + (round * 2);
-        // Here, we create a random number ranging from 1 to 3 to create a random enemy every runtime.
+        numberToSpawn += 2;
         for (int i = 0; i < numberToSpawn; i++)
         {
-            int typeOfEnemy = generateRandomNumber();
-            switch (typeOfEnemy)
-            {
-                case 1:
-                    listEnemies.Add(Instantiate(warrok, spawnPoint, Quaternion.identity));
-                    break;
-                case 2:
-                    listEnemies.Add(Instantiate(warrok, spawnPoint, Quaternion.identity));
-                    break;
-                case 3:
-                    listEnemies.Add(Instantiate(warrok, spawnPoint, Quaternion.identity));
-                    break;
-            }
+            // The Invoke here makes it that every enemy spawns at an interval of 0.5f
+            Invoke("spawnEnemy", 0.5f + 0.5f*i);
+            
         }
     }
 
     int generateRandomNumber()
     {
+        // We roll a dice for a number between 1 to 3 to randomly select the next type of enemy to spawn
+        random = new System.Random();
+        return random.Next(1,4);
+    }
 
-        int typeOfEnemy = UnityEngine.Random.Range(1, 4);
-        return typeOfEnemy;
+    void spawnEnemy()
+    {
+        // This section decides what to spawn according to the number we got from the function down below
+        switch (generateRandomNumber())
+        {
+            case 1:
+                // In case of a number 1, we spawn a warrok
+                instantiateEnemy(warrok);
+                break;
+            case 2:
+                // In case of a number 2, we spawn a nightshade
+                instantiateEnemy(nightshade);
+                break;
+            case 3:
+                // In case of a number 3, we spawn a skeleton
+                instantiateEnemy(skeleton);
+                break;
+        }
+    }
+
+    void instantiateEnemy(GameObject monster)
+    {
+        // We add the enemy to the monster list to easily have access to all monster later in the game
+        listEnemies.Add(Instantiate(monster, spawnPoint, Quaternion.identity));
     }
 }

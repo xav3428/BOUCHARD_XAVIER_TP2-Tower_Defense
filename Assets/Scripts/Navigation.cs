@@ -15,7 +15,6 @@ public class Navigation : MonoBehaviour
         destinationPoint = GameObject.Find("EndPoint").transform.position;
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
-
         agent.SetDestination(destinationPoint);
     }   
 }
