@@ -44,7 +44,6 @@ public class WaveSystem : MonoBehaviour
         {
             // The Invoke here makes it that every enemy spawns at an interval of 0.5f
             Invoke("spawnEnemy", 0.5f + 0.5f*i);
-            
         }
     }
 
