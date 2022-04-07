@@ -371,8 +371,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boutonFusil: {fileID: 1242954247641035910}
-  boutonBombe: {fileID: 1242954249477739484}
-  boutonGlace: {fileID: 1242954248302834723}
+  boutonBombe: {fileID: 1242954248302834723}
+  boutonGlace: {fileID: 1242954249477739484}
   boutonExit: {fileID: 1242954248619644532}
   prefabFusil: {fileID: 710260281741599582, guid: 2ffad3f4fa47a114e90188853694f138, type: 3}
   prefabGlace: {fileID: 9117598451368486172, guid: 1035c85f8ecca2a4fa0a641821929335, type: 3}
@@ -545,7 +545,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 1000
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &1242954247993047030
 MonoBehaviour:

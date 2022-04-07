@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class TurretGunner : TurretManager
 {
+    [SerializeField] private int cost = 150;
+    [SerializeField] private GameObject ganvas;
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        ganvas.SetActive(true);
+        base.Start();
     }
 }

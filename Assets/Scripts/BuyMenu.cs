@@ -13,6 +13,7 @@ public class BuyMenu : MonoBehaviour
     [SerializeField] private GameObject prefabGlace;
     [SerializeField] private GameObject prefabBombe;
     [SerializeField] private Canvas canvas;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -24,20 +25,33 @@ public class BuyMenu : MonoBehaviour
 
     void boutonFusil_Clicked()
     {
-        spawnTurret(prefabFusil);
-        Destroy(gameObject);
+        if (MoneySystem.moneySystem.Money >= 150)
+        {
+            MoneySystem.moneySystem.updateMoneyAmount(-150);
+            spawnTurret(prefabFusil);
+            Destroy(gameObject);
+        }
+        
     }
 
     void boutonBombe_Clicked()
     {
-        spawnTurret(prefabBombe);
-        Destroy(gameObject);
+        if (MoneySystem.moneySystem.Money >= 300)
+        {
+            MoneySystem.moneySystem.updateMoneyAmount(-300);
+            spawnTurret(prefabBombe);
+            Destroy(gameObject);
+        }
     }
 
     void boutonGlace_Clicked()
     {
-        spawnTurret(prefabGlace);
-        Destroy(gameObject);
+        if (MoneySystem.moneySystem.Money >= 225)
+        {
+            MoneySystem.moneySystem.updateMoneyAmount(-225);
+            spawnTurret(prefabGlace);
+            Destroy(gameObject);
+        }
     }
 
     void boutonExit_Clicked()

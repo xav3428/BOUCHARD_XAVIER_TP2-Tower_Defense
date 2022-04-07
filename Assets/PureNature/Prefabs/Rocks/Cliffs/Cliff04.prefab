@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3308059586969488910}
   - component: {fileID: 1893567104115491243}
   - component: {fileID: 4441598674782106977}
-  - component: {fileID: -6772596267206937375}
   m_Layer: 0
   m_Name: Cliff04
   m_TagString: Untagged
@@ -83,17 +82,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &-6772596267206937375
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2784145988302148788}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -160138755191361691, guid: 20e6961ebaae33d4cafeb3c5c2433376, type: 3}

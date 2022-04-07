@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class TurretManager : MonoBehaviour
 {
@@ -23,6 +24,10 @@ public class TurretManager : MonoBehaviour
 
     protected void OnMouseDown()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
         foreach (GameObject item in GameObject.FindGameObjectsWithTag("TowerUI"))
         {
             item.GetComponent<Canvas>().enabled = false;
@@ -32,15 +37,16 @@ public class TurretManager : MonoBehaviour
 
     void OnMouseOver()
     {
-        particles.Play();
-        areaLight.enabled = true;
-        Debug.Log("im hovering a tower");
+        if (!canvas.enabled)
+        {
+            particles.Play();
+            areaLight.enabled = true;
+        }
+        
     }
     void OnMouseExit()
-    {
-
+    { 
         particles.Stop();
         areaLight.enabled = false;
-        Debug.Log("im no longer hovering a tower");
     }
 }

@@ -5068,6 +5068,7 @@ GameObject:
   - component: {fileID: 2591751000683371537}
   - component: {fileID: 7811181138346975904}
   - component: {fileID: 9155181757179745410}
+  - component: {fileID: 7984156056400993225}
   m_Layer: 0
   m_Name: Slower_Top
   m_TagString: Untagged
@@ -5139,6 +5140,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7984156056400993225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8924309824499967851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 0, b: 0, a: 1}
+  outlineWidth: 3
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &9117598451368486172
 GameObject:
   m_ObjectHideFlags: 0
@@ -5150,6 +5169,8 @@ GameObject:
   - component: {fileID: 6388206438212993950}
   - component: {fileID: 3211226198175936005}
   - component: {fileID: 7501173551649299839}
+  - component: {fileID: 1812827653223684528}
+  - component: {fileID: 2351683602599079000}
   m_Layer: 0
   m_Name: Tower Slower
   m_TagString: Untagged
@@ -5226,6 +5247,32 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1812827653223684528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9117598451368486172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 503263e56b0f1e44c900d10c32a8b0f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ganvas: {fileID: 6564532633351860614}
+--- !u!65 &2351683602599079000
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9117598451368486172}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5, y: 5, z: 3}
+  m_Center: {x: 0.000004887581, y: 0.00000011920929, z: 1.0710562}
 --- !u!1001 &7632103166100729537
 PrefabInstance:
   m_ObjectHideFlags: 0
