@@ -7499,6 +7499,7 @@ GameObject:
   - component: {fileID: 1460136675}
   - component: {fileID: 1460136676}
   - component: {fileID: 1460136677}
+  - component: {fileID: 1460136678}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -7559,6 +7560,18 @@ MonoBehaviour:
   - {fileID: 445293709}
   - {fileID: 677646920}
   speed: 1
+--- !u!114 &1460136678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1460136674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37b1540d747ad4c19b0cf12cd7df134d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1460825669 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6375292818504962595, guid: f0ea5e9974da8c94898ed6da8a496d73, type: 3}
@@ -10993,6 +11006,10 @@ PrefabInstance:
       propertyPath: ganvas
       value: 
       objectReference: {fileID: 101877530}
+    - target: {fileID: 1242954247993046985, guid: a78c0313784df05438fa374d0a3bb481, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1242954247993047029, guid: a78c0313784df05438fa374d0a3bb481, type: 3}
       propertyPath: m_IsActive
       value: 0
