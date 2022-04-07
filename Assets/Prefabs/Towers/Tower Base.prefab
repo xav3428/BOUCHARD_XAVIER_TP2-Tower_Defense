@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 1242954247641035929}
   - component: {fileID: 1242954247641035910}
   m_Layer: 0
-  m_Name: Image
+  m_Name: FusilBouton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -268,6 +268,7 @@ GameObject:
   - component: {fileID: 1242954247665922600}
   - component: {fileID: 1242954247665922601}
   - component: {fileID: 1242954247665922646}
+  - component: {fileID: 4751284180195306439}
   - component: {fileID: 1242954247665922647}
   m_Layer: 0
   m_Name: Tower Base
@@ -356,6 +357,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf2d29b919d3b949a14fa187143f3fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ganvas: {fileID: 1242954247993047029}
+--- !u!114 &4751284180195306439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242954247665922644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 710c4f30c82ca3a48b26c7cf18bf742a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boutonFusil: {fileID: 1242954247641035910}
+  boutonBombe: {fileID: 1242954249477739484}
+  boutonGlace: {fileID: 1242954248302834723}
+  boutonExit: {fileID: 1242954248619644532}
+  prefabFusil: {fileID: 710260281741599582, guid: 2ffad3f4fa47a114e90188853694f138, type: 3}
+  prefabGlace: {fileID: 9117598451368486172, guid: 1035c85f8ecca2a4fa0a641821929335, type: 3}
+  prefabBombe: {fileID: 2447803006210216449, guid: 645d30fd6fea1b8478b4bda8b3c962fb, type: 3}
+  canvas: {fileID: 1242954247993046985}
 --- !u!65 &1242954247665922647
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -480,7 +502,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1242954247993047028
 RectTransform:
   m_ObjectHideFlags: 0
@@ -488,22 +510,22 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1242954247993047029}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: 0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 13.61}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 1242954247641035911}
-  - {fileID: 1242954248302834720}
   - {fileID: 1242954249477739485}
+  - {fileID: 1242954248302834720}
   - {fileID: 1242954248619644533}
   m_Father: {fileID: 1242954247665922603}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 50, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!223 &1242954247993046985
 Canvas:
   m_ObjectHideFlags: 0
@@ -511,12 +533,12 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1242954247993047029}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -578,7 +600,7 @@ GameObject:
   - component: {fileID: 1242954248302834722}
   - component: {fileID: 1242954248302834723}
   m_Layer: 0
-  m_Name: Image
+  m_Name: BombeBouton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -598,11 +620,11 @@ RectTransform:
   - {fileID: 1242954247639838849}
   - {fileID: 1242954248794653333}
   m_Father: {fileID: 1242954247993047028}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -17.2}
   m_SizeDelta: {x: 50, y: 16}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1242954248302834725
@@ -968,7 +990,7 @@ GameObject:
   - component: {fileID: 1242954248619644535}
   - component: {fileID: 1242954248619644532}
   m_Layer: 0
-  m_Name: Image
+  m_Name: CloseBouton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -982,7 +1004,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1242954248619644530}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: -0.0000023841858}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1242954247993047028}
@@ -1356,7 +1378,7 @@ GameObject:
   - component: {fileID: 1242954249477739487}
   - component: {fileID: 1242954249477739484}
   m_Layer: 0
-  m_Name: Image
+  m_Name: GlaceBouton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1376,11 +1398,11 @@ RectTransform:
   - {fileID: 1242954248798657848}
   - {fileID: 1242954249664073008}
   m_Father: {fileID: 1242954247993047028}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -17.2}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 50, y: 16}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1242954249477739486

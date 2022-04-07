@@ -62,11 +62,10 @@ public class CameraSystem : MonoBehaviour
             GameObject cam = g_cameras[i];
             if (cam.activeSelf)
             {
-                Canvas[] canvases = FindObjectsOfType<Canvas>();
-                foreach (Canvas canvas in canvases)
+                GameObject[] canvases = GameObject.FindGameObjectsWithTag("TowerUI");
+                foreach (GameObject canvas in canvases)
                 {
-                    canvas.worldCamera = cam.GetComponent<Camera>();
-                    Debug.Log(cam.name);
+                    canvas.GetComponent<Canvas>().worldCamera = cam.GetComponent<Camera>();
                     CanvasRotateToCam(cam.transform, canvas.transform);
                 }
             }

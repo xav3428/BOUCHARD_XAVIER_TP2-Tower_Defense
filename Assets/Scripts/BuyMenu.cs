@@ -1,50 +1,52 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BuyMenu : MonoBehaviour
 {
-    ParticleSystem particles;
-    Light areaLight;
-    Canvas canvas;
-
-
+    [SerializeField] private Button boutonFusil;
+    [SerializeField] private Button boutonBombe;
+    [SerializeField] private Button boutonGlace;
+    [SerializeField] private Button boutonExit;
+    [SerializeField] private GameObject prefabFusil;
+    [SerializeField] private GameObject prefabGlace;
+    [SerializeField] private GameObject prefabBombe;
+    [SerializeField] private Canvas canvas;
     // Start is called before the first frame update
     void Start()
     {
-        particles = GetComponentInChildren(typeof(ParticleSystem), true) as ParticleSystem;
-        areaLight = GetComponentInChildren(typeof(Light), true) as Light;
-        canvas = GetComponentInChildren(typeof(Canvas), true) as Canvas;
-        areaLight.enabled = false;
+        boutonFusil.onClick.AddListener(boutonFusil_Clicked);
+        boutonBombe.onClick.AddListener(boutonBombe_Clicked); 
+        boutonGlace.onClick.AddListener(boutonGlace_Clicked);
+        boutonExit.onClick.AddListener(boutonExit_Clicked);
+    }
+
+    void boutonFusil_Clicked()
+    {
+        spawnTurret(prefabFusil);
+        Destroy(gameObject);
+    }
+
+    void boutonBombe_Clicked()
+    {
+        spawnTurret(prefabBombe);
+        Destroy(gameObject);
+    }
+
+    void boutonGlace_Clicked()
+    {
+        spawnTurret(prefabGlace);
+        Destroy(gameObject);
+    }
+
+    void boutonExit_Clicked()
+    {
         canvas.enabled = false;
-        particles.Stop();
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    void spawnTurret(GameObject prefab)
     {
-        
-    }
-
-    void OnMouseOver()
-    {
-        particles.Play();
-        areaLight.enabled = true;
-    }
-
-    void OnMouseExit()
-    {
-        
-        particles.Stop();
-        areaLight.enabled = false;
-    }
-
-    private void OnMouseDown()
-    {
-        foreach (GameObject item in GameObject.FindGameObjectsWithTag("TowerUI"))
-        {
-            item.GetComponent<Canvas>().enabled = false;
-        }
-        canvas.enabled = true;
+        Instantiate(prefab, this.transform.position, this.transform.rotation);
     }
 }

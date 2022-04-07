@@ -17,7 +17,6 @@ public class NightShadeNav : Navigation
         var areaMask = new NavMeshHit();
 
         agent.SamplePathPosition(-1, 0.0f, out areaMask);
-        Debug.Log(areaMask.mask);
         if (areaMask.mask == 8)
         {
             animator.SetInteger("areamask", 8);

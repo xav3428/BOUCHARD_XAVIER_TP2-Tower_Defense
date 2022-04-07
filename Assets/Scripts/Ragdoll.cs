@@ -12,7 +12,6 @@ public class Ragdoll : MonoBehaviour
     {
         ragdollRbs = GetComponentsInChildren<Rigidbody>();
         animator = GetComponent<Animator>();
-
         ToggleRbs(true);
     }
 
