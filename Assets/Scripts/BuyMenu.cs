@@ -25,9 +25,9 @@ public class BuyMenu : MonoBehaviour
 
     void boutonFusil_Clicked()
     {
-        if (MoneySystem.moneySystem.Money >= 150)
+        if (StatClass.statClass.Money >= 150)
         {
-            MoneySystem.moneySystem.updateMoneyAmount(-150);
+            StatClass.statClass.updateMoneyAmount(-150);
             spawnTurret(prefabFusil);
             Destroy(gameObject);
         }
@@ -36,9 +36,9 @@ public class BuyMenu : MonoBehaviour
 
     void boutonBombe_Clicked()
     {
-        if (MoneySystem.moneySystem.Money >= 300)
+        if (StatClass.statClass.Money >= 450)
         {
-            MoneySystem.moneySystem.updateMoneyAmount(-300);
+            StatClass.statClass.updateMoneyAmount(-450);
             spawnTurret(prefabBombe);
             Destroy(gameObject);
         }
@@ -46,9 +46,9 @@ public class BuyMenu : MonoBehaviour
 
     void boutonGlace_Clicked()
     {
-        if (MoneySystem.moneySystem.Money >= 225)
+        if (StatClass.statClass.Money >= 300)
         {
-            MoneySystem.moneySystem.updateMoneyAmount(-225);
+            StatClass.statClass.updateMoneyAmount(-300);
             spawnTurret(prefabGlace);
             Destroy(gameObject);
         }
