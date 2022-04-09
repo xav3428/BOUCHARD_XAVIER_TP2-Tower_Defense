@@ -62,12 +62,8 @@ public class CameraSystem : MonoBehaviour
             GameObject cam = g_cameras[i];
             if (cam.activeSelf)
             {
-                GameObject[] canvases = GameObject.FindGameObjectsWithTag("TowerUI");
-                foreach (GameObject canvas in canvases)
-                {
-                    canvas.GetComponent<Canvas>().worldCamera = cam.GetComponent<Camera>();
-                    CanvasRotateToCam(cam.transform, canvas.transform);
-                }
+                RotateMenus(cam);
+                RotateHealthBars(cam);
             }
         }
     }
@@ -81,5 +77,24 @@ public class CameraSystem : MonoBehaviour
         Vector3 newDirection = Vector3.RotateTowards(canTransform.forward, targetDirection, singleStep, 0.0f);
 
         canTransform.rotation = Quaternion.LookRotation(newDirection);
+    }
+
+    void RotateMenus(GameObject cam)
+    {
+        GameObject[] canvases = GameObject.FindGameObjectsWithTag("TowerUI");
+        foreach (GameObject canvas in canvases)
+        {
+            canvas.GetComponent<Canvas>().worldCamera = cam.GetComponent<Camera>();
+            CanvasRotateToCam(cam.transform, canvas.transform);
+        }
+    }
+    void RotateHealthBars(GameObject cam)
+    {
+        GameObject[] healthbars = GameObject.FindGameObjectsWithTag("Healthbar");
+        foreach (GameObject healthbar in healthbars)
+        {
+            healthbar.GetComponent<Canvas>().worldCamera = cam.GetComponent<Camera>();
+            CanvasRotateToCam(cam.transform, healthbar.transform);
+        }
     }
 }

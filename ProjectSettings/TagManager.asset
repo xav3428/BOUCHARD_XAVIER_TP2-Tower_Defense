@@ -6,6 +6,7 @@ TagManager:
   tags:
   - TowerUI
   - Enemy
+  - Healthbar
   layers:
   - Default
   - TransparentFX

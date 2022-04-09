@@ -92,9 +92,9 @@ public class EnemyDetection : MonoBehaviour
     {
         Vector3 targetDirection = targetTransform.position - turretRotateTransform.position;
 
-        float instaStep = Time.deltaTime;
         
-        Vector3 newDirection = Vector3.RotateTowards(turretRotateTransform.forward, targetDirection, instaStep, 0.0f);
+        
+        Vector3 newDirection = Vector3.RotateTowards(turretRotateTransform.forward, targetDirection, Time.deltaTime, 0.0f);
         
         turretRotateTransform.rotation = Quaternion.LookRotation(new Vector3(newDirection.x, 90, newDirection.z));
         turretTopTransform.LookAt(targetTransform);

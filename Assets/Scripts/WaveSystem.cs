@@ -20,6 +20,7 @@ public class WaveSystem : MonoBehaviour
 
     // Accessible properties
     public List<GameObject> ListEnemies { get { return this.listEnemies; } }
+    public int Round { get { return this.round; } }
 
     /// <summary>
     /// Functions
