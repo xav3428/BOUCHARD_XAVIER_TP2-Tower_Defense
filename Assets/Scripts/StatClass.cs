@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class StatClass : MonoBehaviour
 {
-    // Variables, turret prices are setup in the Game Manager gameobject.
+    // Variables
     public static StatClass statClass;
-    private int money = 300;
+    private int money = 1000000;
     private int lives = 100;
     
 
@@ -14,7 +14,9 @@ public class StatClass : MonoBehaviour
     public int Money { get { return this.money; } }
     public int Lives { get { return this.lives; } }
     
-    // Functions
+    /// <summary>
+    /// Functions
+    /// </summary>
     private void Awake()
     {
         statClass = this;

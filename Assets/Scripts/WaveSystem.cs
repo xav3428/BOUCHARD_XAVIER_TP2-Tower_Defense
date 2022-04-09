@@ -4,20 +4,34 @@ using UnityEngine;
 
 public class WaveSystem : MonoBehaviour
 {
-    int round;
-    int numberToSpawn;
+    // Variables
+    public static WaveSystem waveSystem;
+    int round = 1;
+    public int numberToSpawn = 2;
+    public int numberToAddEachRound = 2;
     bool waveQueued = false;
     public GameObject warrok;
     public GameObject nightshade;
     public GameObject skeleton;
     private System.Random random = new System.Random();
-    List<GameObject> listEnemies = new List<GameObject>();
+    private List<GameObject> listEnemies = new List<GameObject>();
     Vector3 spawnPoint;
+
+
+    // Accessible properties
+    public List<GameObject> ListEnemies { get { return this.listEnemies; } }
+
+    /// <summary>
+    /// Functions
+    /// </summary>
+    private void Awake()
+    {
+        waveSystem = this;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        numberToSpawn = 0;
         spawnPoint = GameObject.Find("SpawnPoint").transform.position;
     }
 
@@ -34,17 +48,17 @@ public class WaveSystem : MonoBehaviour
     void startNextWave()
     {
         spawnMonsters();
-        
+        round += 1;
     }
 
     void spawnMonsters()
     {
-        numberToSpawn += 2;
         for (int i = 0; i < numberToSpawn; i++)
         {
             // The Invoke here makes it that every enemy spawns at an interval of 0.5f
             Invoke("spawnEnemy", 0.5f + 0.5f*i);
         }
+        numberToSpawn += numberToAddEachRound;
     }
 
     int generateRandomNumber()
@@ -74,9 +88,18 @@ public class WaveSystem : MonoBehaviour
         }
     }
 
+    void addEnemyToList(GameObject enemy)
+    {
+        listEnemies.Add(enemy);
+    }
+
+    public void RemoveEnemyFromList(GameObject enemy)
+    {
+        listEnemies.Remove(enemy);
+    }
     void instantiateEnemy(GameObject monster)
     {
         // We add the enemy to the monster list to easily have access to all monster later in the game
-        listEnemies.Add(Instantiate(monster, spawnPoint, Quaternion.identity));
+        addEnemyToList(Instantiate(monster, spawnPoint, Quaternion.identity));
     }
 }

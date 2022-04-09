@@ -6,13 +6,18 @@ public class Enemy : MonoBehaviour
 {
     private int health;
     // Start is called before the first frame update
-    protected virtual void Start()
+    protected void Start()
     {
         
     }
 
     // Update is called once per frame
     void Update()
+    {
+        
+    }
+
+    public static void ApplyDamage(int damage)
     {
         
     }
