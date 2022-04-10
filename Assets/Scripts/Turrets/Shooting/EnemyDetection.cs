@@ -34,7 +34,7 @@ public class EnemyDetection : MonoBehaviour
     protected void UpdateTarget()
     {
         // If the target equals null means that if it is dead. (or simply, doesn't exist anymore)
-        if (currentTarget == null)
+        if (currentTarget == null || currentTarget.tag == "DeadEnemy")
             foreach (GameObject enemy in WaveSystem.waveSystem.ListEnemies)
             {
                 if (Vector3.Distance(transform.position, enemy.transform.position) <= range)
@@ -45,14 +45,18 @@ public class EnemyDetection : MonoBehaviour
                     // us the enemy that's the furthest on the path in the turret's range)
                     float enemyDistance = GetRemainingDistance(enemy.GetComponent<NavMeshAgent>());
 
-                    if (enemyDistance < shortestDistance)
+                    if (enemyDistance < shortestDistance && enemy.tag == "Enemy")
                     {
                         currentTarget = enemy;
+                    }
+                    else
+                    {
+                        currentTarget = null;
                     }
                     
                 }
             }
-        if (currentTarget != null)
+        if (currentTarget != null && currentTarget.tag == "Enemy")
         {
             if (Vector3.Distance(transform.position, currentTarget.transform.position) <= range)
             {
@@ -64,6 +68,8 @@ public class EnemyDetection : MonoBehaviour
                 currentTarget = null;
             }
         }
+
+        
         
 
 

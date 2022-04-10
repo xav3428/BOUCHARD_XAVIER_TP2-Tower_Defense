@@ -18,8 +18,13 @@ public class Ragdoll : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GetComponent<Enemy>().Health <= 0)
+        {
+            die = true;
+        }
         if (die == true)
         {
+            gameObject.tag = "DeadEnemy";
             die = false;
             ActivateRagdoll();
             Invoke("DeleteSelf", 3f);
@@ -46,6 +51,7 @@ public class Ragdoll : MonoBehaviour
 
     void DeleteSelf()
     {
+        WaveSystem.waveSystem.ListEnemies.Remove(gameObject);
         Destroy(gameObject);
     }
 }
