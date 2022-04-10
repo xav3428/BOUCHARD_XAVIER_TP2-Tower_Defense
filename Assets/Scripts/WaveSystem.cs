@@ -6,13 +6,14 @@ public class WaveSystem : MonoBehaviour
 {
     // Variables
     public static WaveSystem waveSystem;
-    int round = 1;
-    public int numberToSpawn = 2;
+    int round = 0;
+    public int numberToSpawn = 4;
     public int numberToAddEachRound = 2;
     bool waveQueued = false;
     public GameObject warrok;
     public GameObject nightshade;
     public GameObject skeleton;
+    public GameObject babyWarrok;
     private System.Random random = new System.Random();
     private List<GameObject> listEnemies = new List<GameObject>();
     Vector3 spawnPoint;
@@ -80,15 +81,15 @@ public class WaveSystem : MonoBehaviour
         {
             case 1:
                 // In case of a number 1, we spawn a warrok
-                instantiateEnemy(warrok);
+                instantiateEnemy(warrok, spawnPoint);
                 break;
             case 2:
                 // In case of a number 2, we spawn a nightshade
-                instantiateEnemy(nightshade);
+                instantiateEnemy(nightshade, spawnPoint);
                 break;
             case 3:
                 // In case of a number 3, we spawn a skeleton
-                instantiateEnemy(skeleton);
+                instantiateEnemy(skeleton, spawnPoint);
                 break;
         }
     }
@@ -102,12 +103,19 @@ public class WaveSystem : MonoBehaviour
     {
         listEnemies.Remove(enemy);
     }
-    void instantiateEnemy(GameObject monster)
+    void instantiateEnemy(GameObject monster, Vector3 appearanceTransform)
     {
         // We add the enemy to the monster list to easily have access to all monster later in the game
-        GameObject enemy = Instantiate(monster, spawnPoint, Quaternion.identity);
+        GameObject enemy = Instantiate(monster, appearanceTransform, Quaternion.identity);
         addEnemyToList(enemy);
         enemy.GetComponent<Enemy>().SetEnemyHP();
     }
 
+    public void spawnBabies(GameObject warrokParent)
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            instantiateEnemy(babyWarrok, warrokParent.transform.position);
+        }
+    }
 }

@@ -5,10 +5,12 @@ using UnityEngine;
 public class EnemyDetectionGun : EnemyDetection
 {
     public Transform turretTopTransform;
+
+    
     // Start is called before the first frame update
     protected override void Start()
     {
-        InvokeRepeating("UpdateTarget", 0f, 0.2f);
+        InvokeRepeating("UpdateTarget", 0f, 0.3f);
     }
 
     // Update is called once per frame
@@ -33,5 +35,6 @@ public class EnemyDetectionGun : EnemyDetection
     protected override void Shoot(GameObject target)
     {
         target.GetComponent<Enemy>().ApplyDamage(Random.Range(minimumDMG, maxDMG + 1));
+        BackGroundMusicSwitch.musicmanager.towers.PlayOneShot(shootingSound);
     }
 }

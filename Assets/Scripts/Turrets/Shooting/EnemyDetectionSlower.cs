@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyDetectionSlower : EnemyDetection
 {
+    int explosionRadius;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,5 +28,18 @@ public class EnemyDetectionSlower : EnemyDetection
         turretRotateTransform.rotation = Quaternion.LookRotation(new Vector3(newDirection.x, 90, newDirection.z));
     }
 
-    
+    protected override void Shoot(GameObject target)
+    {
+        foreach (GameObject enemy in WaveSystem.waveSystem.ListEnemies)
+        {
+            if (Vector3.Distance(target.transform.position, enemy.transform.position) <= explosionRadius)
+            {
+                enemy.GetComponent<Enemy>().ApplyDamage(Random.Range(minimumDMG, maxDMG + 1));
+                enemy.GetComponent<Enemy>().ApplySlow();
+            }
+        }
+        
+        BackGroundMusicSwitch.musicmanager.towers.PlayOneShot(shootingSound);
+    }
+
 }

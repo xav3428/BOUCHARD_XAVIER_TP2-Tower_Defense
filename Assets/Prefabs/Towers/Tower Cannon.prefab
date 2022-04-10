@@ -248,9 +248,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69a05613c7c4f7049a27769295a2b93f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minimumDMG: 10
+  maxDMG: 20
   currentTarget: {fileID: 0}
   range: 15
   TurretPartToRotateInACircle: {fileID: 3483289973508896408}
+  shootingSound: {fileID: 8300000, guid: 65792dfd1195244b2b7918d6579e4c7f, type: 3}
+  explosionRadius: 3
   turretTopTransform: {fileID: 8145156453653958185}
 --- !u!1 &2481005139847197611
 GameObject:

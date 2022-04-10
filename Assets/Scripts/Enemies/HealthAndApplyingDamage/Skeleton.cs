@@ -7,6 +7,13 @@ public class Skeleton : Enemy
     
     public override void SetEnemyHP()
     {
-        health = 75 + (2 * WaveSystem.waveSystem.Round);
+        health = 50 + (2 * WaveSystem.waveSystem.Round);
+    }
+
+    public override void Die()
+    {
+        base.Die();
+        StatClass.statClass.addAKill();
+        StatClass.statClass.updateMoneyAmount(10);
     }
 }

@@ -14,6 +14,8 @@ public class EnemyDetection : MonoBehaviour
     public float range = 15.0f;
     // Ugly variable name but it does the job in the inspector
     public GameObject TurretPartToRotateInACircle;
+    public AudioClip shootingSound;
+
 
     protected virtual void Start()
     {

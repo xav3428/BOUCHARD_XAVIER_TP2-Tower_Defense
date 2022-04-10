@@ -7,6 +7,14 @@ public class Warrok : Enemy
     
     public override void SetEnemyHP()
     {
-        health = 100 + (2 * WaveSystem.waveSystem.Round);
+        health = 150 + (2 * WaveSystem.waveSystem.Round);
+    }
+
+    public override void Die()
+    {
+        base.Die();
+        WaveSystem.waveSystem.spawnBabies(gameObject);
+        StatClass.statClass.addAKill();
+        StatClass.statClass.updateMoneyAmount(20);
     }
 }

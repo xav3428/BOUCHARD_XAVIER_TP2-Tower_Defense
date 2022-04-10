@@ -152,6 +152,7 @@ MonoBehaviour:
   range: 20
   TurretPartToRotateInACircle: {fileID: 5404054853391895266}
   turretTopTransform: {fileID: 5790353305455020309}
+  shootingSound: {fileID: 8300000, guid: f63f48ae1f52a4ec18a85259e18c34bb, type: 3}
 --- !u!1 &1000103075107457102
 GameObject:
   m_ObjectHideFlags: 0

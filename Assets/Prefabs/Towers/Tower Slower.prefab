@@ -5547,10 +5547,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87dca2e344b42f94298937aa85d6d9b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minimumDMG: 5
+  maxDMG: 10
   currentTarget: {fileID: 0}
   range: 20
-  TurretPartToLookUpAndDown: {fileID: 0}
   TurretPartToRotateInACircle: {fileID: 8924309824499967851}
+  shootingSound: {fileID: 8300000, guid: 2c6dea688b81f4b98aa93e46fe43ecc5, type: 3}
 --- !u!1001 &7632103166100729537
 PrefabInstance:
   m_ObjectHideFlags: 0

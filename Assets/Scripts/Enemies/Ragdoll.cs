@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Ragdoll : MonoBehaviour
 {
-    public bool die = false;
+    
     Rigidbody[] ragdollRbs;
     Animator animator;
 
@@ -15,20 +15,10 @@ public class Ragdoll : MonoBehaviour
         ToggleRbs(true);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void RagDollAndDelete()
     {
-        if (GetComponent<Enemy>().Health <= 0)
-        {
-            die = true;
-        }
-        if (die == true)
-        {
-            gameObject.tag = "DeadEnemy";
-            die = false;
-            ActivateRagdoll();
-            Invoke("DeleteSelf", 3f);
-        }
+        ActivateRagdoll();
+        Invoke("DeleteSelf", 3f);
     }
 
     void ActivateRagdoll()

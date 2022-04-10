@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
@@ -19,6 +20,10 @@ public class Enemy : MonoBehaviour
     private void Update()
     {
         UpdateHealthBar();
+        if (health <= 0 && gameObject.tag == "Enemy")
+        {
+            Die();
+        }
     }
 
     public void ApplyDamage(int damage)
@@ -40,6 +45,23 @@ public class Enemy : MonoBehaviour
 
     public virtual void Die()
     {
+        if (health <= 0)
+        {
+            gameObject.tag = "DeadEnemy";
+            GetComponent<Ragdoll>().RagDollAndDelete();
+            GetComponent<NavMeshAgent>().isStopped = true;
+        }
+        
+    }
 
+    public void ApplySlow()
+    {
+        GetComponent<NavMeshAgent>().speed = GetComponent<NavMeshAgent>().speed / 2;
+        Invoke("RemoveSlow", 2f);
+    }
+
+    public void RemoveSlow()
+    {
+        GetComponent<NavMeshAgent>().speed = GetComponent<NavMeshAgent>().speed * 2;
     }
 }
