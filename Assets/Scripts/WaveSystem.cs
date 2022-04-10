@@ -39,9 +39,12 @@ public class WaveSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (listEnemies.Count == 0 && waveQueued == false)
+
+        if (waveQueued == false && listEnemies.Count == 0)
         {
+            round += 1;
             Invoke("startNextWave", 5f);
+            Debug.Log("round queued");
             waveQueued = true;
         }
     }
@@ -49,7 +52,8 @@ public class WaveSystem : MonoBehaviour
     void startNextWave()
     {
         spawnMonsters();
-        round += 1;
+        Debug.Log("Round" + round + "spawned");
+        waveQueued = false;
     }
 
     void spawnMonsters()
@@ -57,7 +61,7 @@ public class WaveSystem : MonoBehaviour
         for (int i = 0; i < numberToSpawn; i++)
         {
             // The Invoke here makes it that every enemy spawns at an interval of 0.5f
-            Invoke("spawnEnemy", 0.5f + 0.5f*i);
+            Invoke("spawnEnemy", 0.0f + 0.5f*i);
         }
         numberToSpawn += numberToAddEachRound;
     }
@@ -105,4 +109,5 @@ public class WaveSystem : MonoBehaviour
         addEnemyToList(enemy);
         enemy.GetComponent<Enemy>().SetEnemyHP();
     }
+
 }

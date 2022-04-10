@@ -37,4 +37,9 @@ public class Enemy : MonoBehaviour
     {
         healthbar.value = Health;
     }
+
+    public virtual void Die()
+    {
+
+    }
 }
