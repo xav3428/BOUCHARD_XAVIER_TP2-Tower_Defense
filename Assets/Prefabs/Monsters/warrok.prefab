@@ -2409,7 +2409,6 @@ GameObject:
   - component: {fileID: 7968837155765592398}
   - component: {fileID: 7968837155765592384}
   - component: {fileID: 6847651445480665837}
-  - component: {fileID: 6522122650507676298}
   - component: {fileID: 7488729263987238086}
   m_Layer: 0
   m_Name: warrok
@@ -2501,19 +2500,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d51cfc1a0b2a848ec8203334c890d0af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6522122650507676298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7086298556295956597}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38f67c09b58a8ec48875bb94c198f866, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthbar: {fileID: 6169527346362268650}
 --- !u!114 &7488729263987238086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2526,6 +2512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fd36235d91a77846ae820fcc5f60581, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthbar: {fileID: 6169527346362268650}
 --- !u!1 &7156371238833885988
 GameObject:
   m_ObjectHideFlags: 0

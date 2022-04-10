@@ -2672,7 +2672,6 @@ GameObject:
   - component: {fileID: 5838286903713964231}
   - component: {fileID: 5838286903713964230}
   - component: {fileID: 6780640978194594312}
-  - component: {fileID: 1320205759385990881}
   - component: {fileID: 5192038692544094287}
   m_Layer: 0
   m_Name: skeletonzombie
@@ -2764,19 +2763,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d51cfc1a0b2a848ec8203334c890d0af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1320205759385990881
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6756713153287721172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38f67c09b58a8ec48875bb94c198f866, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthbar: {fileID: 190458132737867841}
 --- !u!114 &5192038692544094287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2789,6 +2775,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6918feff720bbde43a99350a9f696103, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthbar: {fileID: 190458132737867841}
 --- !u!1 &6781601076710046759
 GameObject:
   m_ObjectHideFlags: 0

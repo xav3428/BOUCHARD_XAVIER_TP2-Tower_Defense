@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 5169647207688620473}
   - component: {fileID: 5354311348214839492}
   - component: {fileID: 2989654342136172158}
-  - component: {fileID: 3891153736997613879}
+  - component: {fileID: 6303547953927597971}
   m_Layer: 0
   m_Name: Tower Cannon
   m_TagString: Untagged
@@ -236,7 +236,7 @@ MonoBehaviour:
   turretSellingConfigs:
     gameObject: {fileID: 1242954247665922644, guid: a78c0313784df05438fa374d0a3bb481, type: 3}
     sellCost: 225
---- !u!114 &3891153736997613879
+--- !u!114 &6303547953927597971
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -245,13 +245,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2447803006210216449}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e0c33a6cb9297d42958f5775d313ae6, type: 3}
+  m_Script: {fileID: 11500000, guid: 69a05613c7c4f7049a27769295a2b93f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   currentTarget: {fileID: 0}
-  range: 20
-  TurretPartToLookUpAndDown: {fileID: 6034247697961702613}
+  range: 15
   TurretPartToRotateInACircle: {fileID: 3483289973508896408}
+  turretTopTransform: {fileID: 8145156453653958185}
 --- !u!1 &2481005139847197611
 GameObject:
   m_ObjectHideFlags: 0

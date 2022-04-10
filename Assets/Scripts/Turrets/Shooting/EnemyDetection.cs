@@ -6,33 +6,32 @@ using System.Linq;
 
 public class EnemyDetection : MonoBehaviour
 {
+    public int minimumDMG;
+    public int maxDMG;
     // Variables
     public GameObject currentTarget = null;
     private float shortestDistance = Mathf.Infinity;
-    private List<float> remainingDistances = new List<float>();
-    private List<GameObject> enemiesInRange = new List<GameObject>();
     public float range = 15.0f;
     // Ugly variable name but it does the job in the inspector
-    public GameObject TurretPartToLookUpAndDown;
     public GameObject TurretPartToRotateInACircle;
 
-    private void Start()
+    protected virtual void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         if (currentTarget == null)
         {
             return;
         }
-        LookAtTarget(currentTarget.transform, TurretPartToRotateInACircle.transform, TurretPartToLookUpAndDown.transform);
+        LookAtTarget(currentTarget.transform, TurretPartToRotateInACircle.transform);
 
     }
 
-    void UpdateTarget()
+    protected void UpdateTarget()
     {
         // If the target equals null means that if it is dead. (or simply, doesn't exist anymore)
         if (currentTarget == null)
@@ -57,7 +56,8 @@ public class EnemyDetection : MonoBehaviour
         {
             if (Vector3.Distance(transform.position, currentTarget.transform.position) <= range)
             {
-                // shoot at target
+                Shoot(currentTarget);
+
             }
             else
             {
@@ -88,7 +88,7 @@ public class EnemyDetection : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, range);
     }
 
-    void LookAtTarget(Transform targetTransform, Transform turretRotateTransform, Transform turretTopTransform)
+    protected virtual void LookAtTarget(Transform targetTransform, Transform turretRotateTransform)
     {
         Vector3 targetDirection = targetTransform.position - turretRotateTransform.position;
 
@@ -97,10 +97,18 @@ public class EnemyDetection : MonoBehaviour
         Vector3 newDirection = Vector3.RotateTowards(turretRotateTransform.forward, targetDirection, Time.deltaTime, 0.0f);
         
         turretRotateTransform.rotation = Quaternion.LookRotation(new Vector3(newDirection.x, 90, newDirection.z));
-        turretTopTransform.LookAt(targetTransform);
-
     }
 
+    protected void RotateTopPart(Transform Top, Transform target)
+    {
+        Top.LookAt(target);
+        
+    }
+
+    protected virtual void Shoot(GameObject target)
+    {
+
+    }
 
 
 }

@@ -9,12 +9,21 @@ public class StatClass : MonoBehaviour
     private int money = 150;
     private int lives = 100;
     private int kills = 0;
-    
+    private int skeletonHP;
+    private int nightshadeHP;
+    private int warrokHP;
+    private int bbwarrokHP;
+
+
 
     // Accessible properties
     public int Money { get { return money; } }
     public int Lives { get { return lives; } }
     public int Kills { get { return kills; } }
+    public int SkeletonHP { get { return skeletonHP; } }
+    public int NightShadeHP { get { return nightshadeHP; } }
+    public int WarrokHP { get { return warrokHP; } }
+    public int BBWarrokHP { get { return bbwarrokHP; } }
     
     /// <summary>
     /// Functions
@@ -23,7 +32,7 @@ public class StatClass : MonoBehaviour
     {
         statClass = this;
     }
-    
+
     public void updateMoneyAmount(int value)
     {
         // Here, we add the money gained from killing an enemy.

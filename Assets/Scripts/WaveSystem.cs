@@ -101,6 +101,8 @@ public class WaveSystem : MonoBehaviour
     void instantiateEnemy(GameObject monster)
     {
         // We add the enemy to the monster list to easily have access to all monster later in the game
-        addEnemyToList(Instantiate(monster, spawnPoint, Quaternion.identity));
+        GameObject enemy = Instantiate(monster, spawnPoint, Quaternion.identity);
+        addEnemyToList(enemy);
+        enemy.GetComponent<Enemy>().SetEnemyHP();
     }
 }

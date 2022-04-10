@@ -1,30 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    public static Enemy enemyPointer;
-    protected static int health;
+    protected int health;
+    public Slider healthbar;
 
     public int Health { get { return health; } }
 
-    protected void Awake()
-    {
-        enemyPointer = this;
-    }
-
     // Start is called before the first frame update
-    protected virtual void Start(){}
-
-    // Update is called once per frame
-    void Update()
+    protected void Start()
     {
-        
+        InitHealthbar();
     }
 
-    public static void ApplyDamage(int damage)
+    private void Update()
+    {
+        UpdateHealthBar();
+    }
+
+    public void ApplyDamage(int damage)
     {
         health -= damage;
+    }
+    public virtual void SetEnemyHP() { }
+
+    public void InitHealthbar()
+    {
+        healthbar.maxValue = Health;
+        healthbar.value = Health;
+    }
+
+    public void UpdateHealthBar()
+    {
+        healthbar.value = Health;
     }
 }
